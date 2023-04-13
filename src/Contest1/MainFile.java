@@ -1,15 +1,29 @@
 package Contest1;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class MainFile {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] reservoirs = new int[n];
         for (int i = 0; i < n; i++) {
             reservoirs[i] = sc.nextInt();
         }
+//        Scanner fileScanner = new Scanner(new InputStreamReader(new FileInputStream("test.txt")));
+//        int n = Integer.parseInt(fileScanner.nextLine());
+//        int[] reservoirs = new int[n];
+//        for (int i = 0; i < n; i++) {
+//            reservoirs[i] = fileScanner.nextInt();
+//        }
+//        System.out.println(n);
+//        for (int el : reservoirs) {
+//            System.out.print(el + " ");
+//        }
         long time = System.currentTimeMillis();
         int max = reservoirs[0];
         int min = reservoirs[0];
@@ -29,5 +43,6 @@ public class Main {
         } else {
             System.out.println(max - min);
         }
+        //System.out.println(System.currentTimeMillis() - time);
     }
 }
